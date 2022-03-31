@@ -1,0 +1,9 @@
+[flake8]
+count = true
+statistics = true
+show-source = true
+max_line_length = 120
+filename = *.py
+ignore =
+    F541
+
