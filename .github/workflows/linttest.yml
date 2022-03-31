@@ -29,11 +29,11 @@ jobs:
         flake8 src
     - name: Test with pytest
       run: |
-        python -m pytest --cov=src src/test
+        python -m pytest --cov-report xml:cov.xml --cov=src src/test
     - name: Upload to codecov
       uses: codecov/codecov-action@v2
       with:
         token: 6a3b0dae-20fc-4121-837e-dc4d640e4947
-        files: .coverage
+        files: cov.xml
         flags: unittests
         verbose: true
