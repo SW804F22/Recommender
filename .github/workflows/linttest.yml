@@ -29,7 +29,7 @@ jobs:
         flake8 src
     - name: Test with pytest
       run: |
-        python -m pytest --cov-report xml:cov.xml --cov=src src/test
+        python -m pytest --cov-config=.coveragerc --cov-report xml:cov.xml --cov=src src/test
     - name: Upload to codecov
       uses: codecov/codecov-action@v2
       with:
