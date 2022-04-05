@@ -16,9 +16,11 @@ def health_check():
     return "Alive!"
 
 
-@app.route("/predict/<uuid:user>")
+@app.route("/predict/<uuid:user>", methods=['POST'])
 def predict(user):
-    return make_response(jsonify("not implemented"), 500)
+    assert request.is_json
+    content = request.json
+    return make_response(jsonify({'user': user, 'location': content['location']}), 500)
 
 
 @app.route("/train/<uuid:user>/<uuid:poi>")
@@ -27,4 +29,4 @@ def train(user, poi):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
