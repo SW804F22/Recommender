@@ -1,4 +1,4 @@
-from src.main import lil_func
+from src.app import lil_func
 
 
 def test_test():
