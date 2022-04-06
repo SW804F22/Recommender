@@ -1,0 +1,10 @@
+tensorflow
+pandas
+numpy
+sklearn
+matplotlib
+pathlib
+torch
+scipy
+keras
+flask
